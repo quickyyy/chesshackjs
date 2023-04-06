@@ -115,7 +115,7 @@ function main() {
 //   setTimeout(4000)
 //   main()
 // }
-function reloadScript() {
+function unloadScript() {
   var scriptElements = document.getElementsByTagName('script');
   for (var i = 0; i < scriptElements.length; i++) {
     var scriptElement = scriptElements[i];
@@ -123,15 +123,25 @@ function reloadScript() {
       scriptElement.src += '?reload=' + new Date().getTime();
     }
   }
-  location.reload();
+  location.unload();
 }
 
 function loadScript() {
   var scriptElement = document.createElement('script');
-  scriptElement.src = 'https://github.com/quickyyy/chesshackjs/blob/main/%D0%B0.js';
+  scriptElement.src = "https://raw.githubusercontent.com/quickyyy/chesshackjs/main/abobus.js";
   document.head.appendChild(scriptElement);
 }
-
+function reloadScript() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'my-script.js', true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var scriptCode = xhr.responseText;
+      eval(scriptCode);
+    }
+  };
+  xhr.send();
+}
 function startHack(element) {
   element.innerHTML = "Please Wait.."
   element.disabled = true
@@ -149,7 +159,8 @@ function startHack(element) {
       var blackrestart = document.createElement("button");
       blackrestart.className = "ui_v5-button-component ui_v5-button-primary ui_v5-button-large ui_v5-button-full"
       blackrestart.innerHTML = "Рестарт скрипта"
-      blackrestart.onclick = () => { reloadScript() }
+      // blackrestart.onclick = () => { reloadScript() }
+      blackrestart.onclick = () => { unloadScript() }
       blackrestart.onclick = () => { loadScript() }
       let side_bar = document.querySelector(".board-layout-sidebar")
       side_bar.prepend(blackrestart)
