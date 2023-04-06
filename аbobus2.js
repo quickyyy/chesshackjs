@@ -128,7 +128,7 @@ function unloadScript() {
 
 function loadScript() {
   var scriptElement = document.createElement('script');
-  scriptElement.src = "https://cdn.jsdelivr.net/gh/quickyyy/chesshackjs@main/%D0%B0bobus.js";
+  scriptElement.src = "https://cdn.jsdelivr.net/gh/quickyyy/chesshackjs@main/%D0%B0bobus2.js";
   document.head.appendChild(scriptElement);
 }
 function reloadScript() {
