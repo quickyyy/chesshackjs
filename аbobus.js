@@ -128,7 +128,7 @@ function unloadScript() {
 
 function loadScript() {
   var scriptElement = document.createElement('script');
-  scriptElement.src = "https://raw.githubusercontent.com/quickyyy/chesshackjs/main/abobus.js";
+  scriptElement.src = "https://cdn.jsdelivr.net/gh/quickyyy/chesshackjs@main/%D0%B0bobus.js";
   document.head.appendChild(scriptElement);
 }
 function reloadScript() {
@@ -189,6 +189,6 @@ button.className = "ui_v5-button-component ui_v5-button-primary ui_v5-button-lar
 button.innerHTML = "Рассчитать лучший ход"
 //start hack when button is clicked
 button.onclick = () => { startHack(button) }
-let main_body = document.querySelector(".board-layout-main")
-main_body.prepend(button)
+let main_bodyyyy = document.querySelector(".board-layout-main")
+main_bodyyyy.prepend(button)
 
