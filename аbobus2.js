@@ -123,7 +123,7 @@ function unloadScript() {
       scriptElement.src += '?reload=' + new Date().getTime();
     }
   }
-  location.unload();
+  location.Unload();
 }
 
 function loadScript() {
@@ -161,6 +161,7 @@ function startHack(element) {
       blackrestart.innerHTML = "Рестарт скрипта"
       // blackrestart.onclick = () => { reloadScript() }
       blackrestart.onclick = () => { unloadScript() }
+      blackrestart.onclick = () => { setTimeout(1000) }
       blackrestart.onclick = () => { loadScript() }
       let side_bar = document.querySelector(".board-layout-sidebar")
       side_bar.prepend(blackrestart)
@@ -189,6 +190,6 @@ button.className = "ui_v5-button-component ui_v5-button-primary ui_v5-button-lar
 button.innerHTML = "Рассчитать лучший ход"
 //start hack when button is clicked
 button.onclick = () => { startHack(button) }
-let main_bodyyyy = document.querySelector(".board-layout-main")
-main_bodyyyy.prepend(button)
+let main_bodyyyyy = document.querySelector(".board-layout-main")
+main_bodyyyyy.prepend(button)
 
