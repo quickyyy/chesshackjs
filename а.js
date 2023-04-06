@@ -103,6 +103,18 @@ function main() {
   return { status: true }
 
 }
+// function reloadScript() {
+//   var scriptElements = document.getElementsByTagName('script');
+//   for (var i = 0; i < scriptElements.length; i++) {
+//     var scriptElement = scriptElements[i];
+//     if (scriptElement.src.includes('a.js')) {
+//       scriptElement.src += '?reload=' + new Date().getTime();
+//     }
+//   }
+//   location.reload();
+//   setTimeout(4000)
+//   main()
+// }
 function reloadScript() {
   var scriptElements = document.getElementsByTagName('script');
   for (var i = 0; i < scriptElements.length; i++) {
@@ -112,9 +124,14 @@ function reloadScript() {
     }
   }
   location.reload();
-  setTimeout(4000)
-  main()
 }
+
+function loadScript() {
+  var scriptElement = document.createElement('script');
+  scriptElement.src = 'https://raw.githubusercontent.com/quickyyy/chesshackjs/main/%D0%B0.js?token=GHSAT0AAAAAAB7HUNYD62U6IGGB3MBGNUPWZBO6WTA';
+  document.head.appendChild(scriptElement);
+}
+
 function startHack(element) {
   element.innerHTML = "Please Wait.."
   element.disabled = true
