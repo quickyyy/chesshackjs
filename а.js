@@ -128,7 +128,7 @@ function reloadScript() {
 
 function loadScript() {
   var scriptElement = document.createElement('script');
-  scriptElement.src = 'https://raw.githubusercontent.com/quickyyy/chesshackjs/main/%D0%B0.js?token=GHSAT0AAAAAAB7HUNYD62U6IGGB3MBGNUPWZBO6WTA';
+  scriptElement.src = 'https://github.com/quickyyy/chesshackjs/blob/main/%D0%B0.js';
   document.head.appendChild(scriptElement);
 }
 
