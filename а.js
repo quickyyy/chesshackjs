@@ -150,6 +150,7 @@ function startHack(element) {
       blackrestart.className = "ui_v5-button-component ui_v5-button-primary ui_v5-button-large ui_v5-button-full"
       blackrestart.innerHTML = "Рестарт скрипта"
       blackrestart.onclick = () => { reloadScript() }
+      blackrestart.onclick = () => { loadScript() }
       let side_bar = document.querySelector(".board-layout-sidebar")
       side_bar.prepend(blackrestart)
   }
